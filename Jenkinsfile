@@ -2,9 +2,19 @@ pipeline {
     agent any
     tools {nodejs "node"}
     stages {
+        stage('Copy environment variables') {
+            steps {
+                sh 'cp .env.sample .env'
+            }
+        }
+        stage('Install dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Test') {
             steps {
-                sh 'npm --version'
+                sh 'npm run test'
             }
         }
     }
