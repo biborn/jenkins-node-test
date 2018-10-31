@@ -32,7 +32,7 @@ pipeline {
             echo 'Unstable'
         }
         changed {
-            echo 'Status changed'
+            echo 'Status changed!'
         }
     }
 }
