@@ -2,11 +2,11 @@ pipeline {
     agent any
     tools {nodejs "node"}
     stages {
-	stage() {
-	    steps {
-		sh 'node -v'
-	    }
-	}
+        stage('Debug node installation') {
+            steps {
+                sh 'node -v'
+            }
+        }
         stage('Copy environment variables') {
             steps {
                 sh 'cp .env.sample .env'
